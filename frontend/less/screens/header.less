@@ -5,9 +5,27 @@
   @header: 160px;
   .header {
     height: @header;
+
+    .logo {
+      background: url("../../images/header/logo.png") no-repeat;
+      width: 288px;
+      height: 70px;
+    }
   }
+
+  .left-block {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .right-block {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(~'100% - 292px');
+    text-align: right;
+  }
+
   .logo-link, .menu, .phone-container {
-    display: table;
+    display: inline-block;
     height: @header;
     line-height: @header;
     .logo, .menu-item, .phone-block {
@@ -29,8 +47,11 @@
   .phone-container {
     .phone-icon {
       display: inline-block;
-      vertical-align: 7px;
+      vertical-align: 6px;
       margin-right: 8px;
+      background: url("../../images/header/phone.png") no-repeat;
+      width: 16px;
+      height: 26px;
     }
     .phone {
       display: block;
