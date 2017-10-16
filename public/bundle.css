@@ -1,0 +1,114 @@
+html {
+  height: 100%;
+}
+body {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  z-index: -1;
+  font-family: 'Open Sans', sans-serif;
+  color: #3d3d3d;
+}
+body *::selection {
+  background: #3d3d3d;
+  color: white;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  user-select: none;
+}
+.right {
+  float: right;
+}
+.right > * {
+  float: left;
+}
+.left {
+  float: left;
+}
+.container {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 1440px;
+  max-width: 1440px;
+  padding: 0 15px;
+}
+.container.no-padding {
+  padding: 0;
+}
+@media (max-width: 1470px) {
+  .container {
+    width: 1280px;
+  }
+}
+@media (max-width: 1310px) {
+  .container {
+    width: 991px;
+  }
+}
+@media (max-width: 1021px) {
+  .container {
+    width: 768px;
+  }
+}
+@media (max-width: 798px) {
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.header-container .header {
+  height: 160px;
+}
+.header-container .logo-link,
+.header-container .menu,
+.header-container .phone-container {
+  display: table;
+  height: 160px;
+  line-height: 160px;
+}
+.header-container .logo-link .logo,
+.header-container .menu .logo,
+.header-container .phone-container .logo,
+.header-container .logo-link .menu-item,
+.header-container .menu .menu-item,
+.header-container .phone-container .menu-item,
+.header-container .logo-link .phone-block,
+.header-container .menu .phone-block,
+.header-container .phone-container .phone-block {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+.header-container .menu {
+  margin-right: 70px;
+}
+.header-container .menu .menu-item {
+  color: #868686;
+  margin-left: 30px;
+  font-size: 17px;
+}
+.header-container .phone-container .phone-icon {
+  display: inline-block;
+  vertical-align: 7px;
+  margin-right: 8px;
+}
+.header-container .phone-container .phone {
+  display: block;
+  color: #3d3d3d;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.header-container .phone-container .phone-desc {
+  font-size: 12px;
+  color: #868686;
+}

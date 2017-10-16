@@ -1,0 +1,41 @@
+@import "palette.less";
+
+html {
+  height: 100%;
+}
+body {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  z-index: -1;
+  font-family: 'Open Sans', sans-serif;
+  color: @text;
+
+  *::selection {
+    background: @text;
+    color: white;
+  }
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  user-select: none;
+}
+
+.right {
+  float: right;
+  >* {
+    float: left;
+  }
+}
+.left {
+  float: left;
+}

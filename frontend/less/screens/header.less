@@ -1,0 +1,46 @@
+@import "../core/palette.less";
+@import "../core/screens.less";
+
+.header-container {
+  @header: 160px;
+  .header {
+    height: @header;
+  }
+  .logo-link, .menu, .phone-container {
+    display: table;
+    height: @header;
+    line-height: @header;
+    .logo, .menu-item, .phone-block {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  }
+
+  .menu {
+    margin-right: 70px;
+    .menu-item {
+      color: @grey;
+      margin-left: 30px;
+      font-size: 17px;
+    }
+  }
+
+  .phone-container {
+    .phone-icon {
+      display: inline-block;
+      vertical-align: 7px;
+      margin-right: 8px;
+    }
+    .phone {
+      display: block;
+      color: @text;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .phone-desc {
+      font-size: 12px;
+      color: @grey;
+    }
+  }
+}
