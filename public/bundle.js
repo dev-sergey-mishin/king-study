@@ -44,50 +44,13 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(3);
+	module.exports = __webpack_require__(4);
 
 
 /***/ },
 /* 1 */,
 /* 2 */,
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(5);
-
-	__webpack_require__(4);
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function($) {$(document).ready(() => {
-	    console.log('test');
-	    $('.header-container').load('partial/header.html');
-
-	    $('.screen-container-1').load('partial/screen-1.html');
-	    $('.screen-container-2').load('partial/screen-2.html');
-	    $('.screen-container-3').load('partial/screen-3.html');
-	    $('.screen-container-4').load('partial/screen-4.html');
-	    $('.screen-container-5').load('partial/screen-5.html');
-	    $('.screen-container-6').load('partial/screen-6.html');
-	    $('.screen-container-7').load('partial/screen-7.html');
-	    $('.screen-container-8').load('partial/screen-8.html');
-	    $('.screen-container-9').load('partial/screen-9.html');
-
-	    $('.footer-container').load('partial/footer.html');
-	});
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
-
-/***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10344,6 +10307,70 @@
 	return jQuery;
 	} );
 
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(7);
+
+	let loader = __webpack_require__(6);
+	loader.loadContent().then(
+	    () => {
+	        __webpack_require__(5);
+	    }
+	);
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {$(document).ready(() => {
+	    let mobileMenu = $('.mobile-menu');
+	    let mobileMenuButton = mobileMenu.find('.mobile-menu-button');
+	    let mobileMenuToggle = mobileMenu.find('.mobile-menu-toggle');
+
+	    mobileMenuButton.click((e) => {
+	        mobileMenuButton.toggleClass('active');
+	        mobileMenuToggle.toggleClass('active');
+	    });
+
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {module.exports.loadContent = () => {
+	    return new Promise((resolve, reject) => {
+	        $('.header-container').load('partial/header.html');
+
+	        $('.screen-container-1').load('partial/screen-1.html');
+	        $('.screen-container-2').load('partial/screen-2.html');
+	        $('.screen-container-3').load('partial/screen-3.html');
+	        $('.screen-container-4').load('partial/screen-4.html');
+	        $('.screen-container-5').load('partial/screen-5.html');
+	        $('.screen-container-6').load('partial/screen-6.html');
+	        $('.screen-container-7').load('partial/screen-7.html');
+	        $('.screen-container-8').load('partial/screen-8.html');
+	        $('.screen-container-9').load('partial/screen-9.html');
+
+	        $('.footer-container').load('partial/footer.html', () => {
+	            resolve();
+	        });
+	    });
+	};
+
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

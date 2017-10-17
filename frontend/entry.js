@@ -1,3 +1,8 @@
 require('./less/import.less');
 
-require('./js/loader.js');
+let loader = require('./js/loader.js');
+loader.loadContent().then(
+    () => {
+        require('./js/header.js');
+    }
+);

@@ -2,32 +2,62 @@
 @import "../core/screens.less";
 
 .header-container {
-  @header: 160px;
+  @height: 160px;
   .header {
-    height: @header;
+    height: @height;
+    box-shadow: 0 5px 5px -5px rgba(0,0,0,0.5);
 
-    .logo {
-      background: url("../../images/header/logo.png") no-repeat;
-      width: 288px;
-      height: 70px;
+    .logo-link {
+      .logo {
+        background: url("../../images/header/logo.png") no-repeat;
+        width: 288px;
+        height: 70px;
+      }
+
+      @media(max-width: @tablet) {
+        height: 42px;
+        line-height: 42px;
+        margin-top: 15px;
+        .logo {
+          background: url("../../images/header/logo-mobile.png") no-repeat;
+          width: 174px;
+          height: 42px;
+        }
+      }
     }
+
   }
 
   .left-block {
     display: inline-block;
     vertical-align: top;
+    @media (max-width: @tablet) {
+      display: block;
+      margin-bottom: 20px;
+    }
   }
   .right-block {
     display: inline-block;
     vertical-align: top;
     width: calc(~'100% - 292px');
     text-align: right;
+    @media (max-width: @tablet) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      height: auto;
+      line-height: 1;
+    }
   }
 
   .logo-link, .menu, .phone-container {
     display: inline-block;
-    height: @header;
-    line-height: @header;
+    height: @height;
+    line-height: @height;
+    @media (max-width: @tablet) {
+      height: auto;
+      line-height: 1;
+    }
     .logo, .menu-item, .phone-block {
       display: inline-block;
       vertical-align: middle;
@@ -37,10 +67,17 @@
 
   .menu {
     margin-right: 70px;
-    .menu-item {
-      color: @grey;
-      margin-left: 30px;
-      font-size: 17px;
+    @media (max-width: @tablet-max-media) {
+      display: none;
+    }
+  }
+  .menu-item {
+    color: @grey;
+    margin-left: 30px;
+    font-size: 17px;
+    transition: color 0.5s;
+    &:hover {
+      color: @text;
     }
   }
 
@@ -58,10 +95,108 @@
       color: @text;
       font-size: 28px;
       margin-bottom: 20px;
+      @media (max-width: @tablet) {
+        font-size: 20px;
+      }
     }
     .phone-desc {
       font-size: 12px;
       color: @grey;
     }
   }
+
+  .mobile-menu {
+    display: none;
+    @media (max-width: @tablet-max-media) {
+      display: inline-block;
+    }
+
+    .mobile-menu-button {
+      background: url("../../images/header/mobile-menu.svg") no-repeat;
+      width: 35px;
+      height: 35px;
+      margin-left: 30px;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+      outline: none;
+      &.active {
+        background: url("../../images/header/mobile-menu-close.svg") no-repeat;
+      }
+      @media (max-width: @tablet) {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+      }
+    }
+    .mobile-menu-toggle {
+      display: none;
+      position: absolute;
+      min-height: 80px;
+      background: @white;
+      left: 0;
+      right: 0;
+      top: @height;
+      z-index: 100;
+      text-align: center;
+      opacity: 0.99;
+
+      @media (max-width: @tablet) {
+        text-align: left;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 10px;
+        top: -10px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+        pointer-events: none;
+      }
+
+      &.active {
+        display: block;
+      }
+
+      .menu-item {
+        position: relative;
+        line-height: 80px;
+        padding-right: 25px;
+        &::after {
+          content: '';
+          position: absolute;
+          background: url("../../images/header/arrow-right.svg") no-repeat right;
+          width: 20px;
+          height: 20px;
+          right: 0;
+          top: 6px;
+          transition: right 0.5s;
+        }
+        &:hover {
+          &::after {
+            right: -10px;
+          }
+        }
+        @media (max-width: @tablet) {
+          display: block;
+          line-height: 50px;
+          margin-left: 15px;
+          &::after {
+            top: 19px;
+            right: 15px;
+          }
+          &:hover {
+            &::after {
+              right: 15px;
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
 }
