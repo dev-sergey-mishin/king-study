@@ -261,21 +261,61 @@ img {
   left: 0;
   pointer-events: none;
 }
-.screen-container-1 .head {
+.screen-container-1 > * {
   position: relative;
+  z-index: 1;
+}
+.screen-container-1 .head {
   font-size: 60px;
   line-height: 1.262;
   color: #fff;
-  margin: 0;
-  z-index: 1;
+  margin: 0 0 20px;
 }
 @media (max-width: 1210px) {
   .screen-container-1 .head {
     font-size: 40px;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 768px) {
   .screen-container-1 .head {
     font-size: 30px;
+    margin-bottom: 10px;
+  }
+}
+.screen-container-1 .text {
+  font-size: 30px;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .screen-container-1 .text {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+.screen-container-1 .desc {
+  font-size: 25px;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 25px;
+}
+@media (max-width: 768px) {
+  .screen-container-1 .desc {
+    font-size: 15px;
+  }
+}
+.screen-container-1 .form {
+  margin-bottom: 20px;
+}
+.screen-container-1 .sub-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .screen-container-1 .sub-text {
+    font-size: 10px;
   }
 }
