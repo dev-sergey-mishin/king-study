@@ -3,12 +3,10 @@
 
 .screen-container-1 {
   position: relative;
-  background-size: cover;
   box-sizing: border-box;
-  background: rgb(0, 0, 0, 0.6) url("../../images/back-1.png") no-repeat;
+  background: rgb(0, 0, 0, 0.6) url("../../images/back-1.png") no-repeat center;
   height: 640px;
   padding-top: 74px;
-  overflow: hidden;
 
   &::after {
     content: '';
@@ -24,11 +22,16 @@
 
   .head {
     position: relative;
-    font-size: 61px;
+    font-size: 60px;
     line-height: 1.262;
     color: @white;
     margin: 0;
     z-index: 1;
-    max-width: 70%;
+    @media (max-width: @tablet-max-media) {
+      font-size: 40px;
+    }
+    @media (max-width: @tablet) {
+      font-size: 30px;
+    }
   }
 }
