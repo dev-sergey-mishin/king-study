@@ -1,2 +1,84 @@
 @import "../core/palette.less";
 @import "../core/screens.less";
+
+.footer-container {
+  background-color: @grey;
+  .footer {
+    @height: 174px;
+    min-height: @height;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .left {
+      float: left;
+    }
+
+    .copyright {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.75;
+      font-size: 16px;
+      color: @white;
+    }
+    .policy-container {
+      display: inline-block;
+      vertical-align: middle;
+      color: @white;
+      font-size: 12px;
+      margin-left: 110px;
+      @media(max-width: @tablet-max-media) {
+        display: block;
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .policy {
+        opacity: 0.5;
+        margin-right: 20px;
+        @media(max-width: @tablet) {
+          display: block;
+        }
+      }
+    }
+
+    .phone-container {
+      display: inline-block;
+      vertical-align: middle;
+      float: right;
+      @media(max-width: @tablet) {
+        display: block;
+        float: none;
+        margin-bottom: 20px;
+      }
+
+      .phone-block {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+      }
+      .phone-icon {
+        display: inline-block;
+        vertical-align: 6px;
+        margin-right: 8px;
+        background: url("../../images/header/phone.png") no-repeat;
+        width: 16px;
+        height: 26px;
+      }
+      .phone {
+        display: block;
+        color: @white;
+        font-size: 28px;
+        margin-bottom: 20px;
+        @media (max-width: @tablet) {
+          font-size: 20px;
+        }
+      }
+      .phone-desc {
+        font-size: 12px;
+        color: @white;
+      }
+    }
+  }
+}
