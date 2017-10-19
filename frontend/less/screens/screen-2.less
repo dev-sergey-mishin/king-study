@@ -1,2 +1,120 @@
 @import "../core/palette.less";
 @import "../core/screens.less";
+
+.screen-container-2 {
+  background-color: @whitty;
+  overflow: hidden;
+  padding-bottom: 100px;
+  @media(max-width: @tablet) {
+    padding-bottom: 50px;
+  }
+}
+
+.screen-2 {
+  position: relative;
+  text-align: center;
+
+  .head {
+    color: @text;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    @media(max-width: @tablet-max-media) {
+      font-size: 40px;
+      margin-bottom: 45px;
+    }
+    @media(max-width: @tablet) {
+      font-size: 24px;
+      width: 200px;
+      margin: 35px auto 28px;
+    }
+  }
+
+  .scroll-container {
+    position: relative;
+    width: 1520px;
+    max-width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .blocks-container {
+    width: auto;
+    white-space: nowrap;
+
+    .block-position {
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 0 15px;
+
+      .block {
+        position: relative;
+        box-sizing: border-box;
+        cursor: pointer;
+        width: 330px;
+        height: 330px;
+        box-shadow: 0 4px 12px 1px rgba(197, 197, 197, 0.85);
+        transition: transform 0.3s;
+        margin-bottom: 45px;
+        &:hover {
+          transform: scale(1.05);
+        }
+        @media(max-width: @tablet) {
+          margin-bottom: 30px;
+        }
+
+        .block-head {
+          position: absolute;
+          color: @white;
+          bottom: 35px;
+          left: 35px;
+          font-size: 35px;
+          line-height: 1.2;
+          text-align: left;
+        }
+
+        &.block-1 {
+          background: url("../../images/screen_2/block-back-1.png") no-repeat center;
+        }
+        &.block-2 {
+          background: url("../../images/screen_2/block-back-2.png") no-repeat center;
+        }
+        &.block-3 {
+          background: url("../../images/screen_2/block-back-3.png") no-repeat center;
+        }
+        &.block-4 {
+          background: url("../../images/screen_2/block-back-4.png") no-repeat center;
+        }
+        background-size: 330px;
+      }
+      
+      .block-desc {
+        color: @text;
+        line-height: 1.75;
+        font-size: 16px;
+        text-align: left;
+        @media (max-width: @tablet) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+}
+
+.Результаты_за_2017_год {
+  font-size: 19px;
+  font-family: "OpenSans";
+  color: rgb(61, 61, 61);
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  -moz-transform: matrix( 1.25633770767878,0,0,1.25633770767878,0,0);
+  -webkit-transform: matrix( 1.25633770767878,0,0,1.25633770767878,0,0);
+  -ms-transform: matrix( 1.25633770767878,0,0,1.25633770767878,0,0);
+  position: absolute;
+  left: 111.277px;
+  top: 760.668px;
+  z-index: 605;
+}

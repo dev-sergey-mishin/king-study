@@ -31,7 +31,9 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({ NODE_ENV: JSON.stringify(NODE_ENV) }),
         new webpack.ProvidePlugin({
-            $: 'jquery'
+            $: 'jquery',
+            jquery: 'jquery',
+            jQuery: 'jquery',
         })
     ],
 

@@ -10312,12 +10312,13 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(7);
+	__webpack_require__(8);
 
 	let loader = __webpack_require__(6);
 	loader.loadContent().then(
 	    () => {
 	        __webpack_require__(5);
+	        __webpack_require__(7);
 	    }
 	);
 
@@ -10368,6 +10369,18 @@
 
 /***/ },
 /* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {$(document).ready(() => {
+	    let $scrollContainer = $('.scroll-container');
+	    let $blocks = $('.blocks-container');
+
+
+	});
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

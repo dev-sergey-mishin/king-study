@@ -1,2 +1,103 @@
 @import "../core/palette.less";
 @import "../core/screens.less";
+
+.screen-container-3 {
+  overflow: hidden;
+  .screen-3 {
+    position: relative;
+    text-align: center;
+
+    .head {
+      color: @text;
+      font-size: 45px;
+      font-weight: 600;
+      margin-top: 80px;
+      margin-bottom: 50px;
+      @media(max-width: @tablet-max-media) {
+        font-size: 40px;
+        margin-bottom: 45px;
+      }
+      @media(max-width: @tablet) {
+        font-size: 24px;
+        width: 200px;
+        margin: 35px auto 28px;
+      }
+    }
+
+
+    .fact {
+      position: relative;
+      overflow: hidden;
+      height: 580px;
+      &.fact-1 {
+        background:  url("../../images/screen-3/fact-1.png") no-repeat right top;
+        background-size: 60% auto;
+        @media(max-width: @desc) {
+          background-size: auto 580px;
+          background: linear-gradient(to right, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 75%),
+                  url("../../images/screen-3/fact-1.png") no-repeat right top;
+        }
+        @media(max-width: @tablet-max) {
+          background:
+                  linear-gradient(to bottom, rgba(255,255,255,0) 46%,rgba(255,255,255,0) 47%,rgba(255,255,255,1) 83%),
+                  url("../../images/screen-3/fact-1.png") no-repeat top;
+          //background-size: 100% auto;
+        }
+        @media(max-width: @tablet) {
+          background:
+                  linear-gradient(to bottom, rgba(255,255,255,0) 46%,rgba(255,255,255,0) 47%,rgba(255,255,255,1) 83%),
+                  url("../../images/screen-3/fact-1.png") no-repeat top;
+          background-size: auto 300px;
+        }
+      }
+
+      .fact-head {
+        position: relative;
+        font-size: 35px;
+        font-weight: bold;
+        line-height: 0.944;
+        margin-bottom: 40px;
+        margin-top: 120px;
+        @media(max-width: @tablet-max) {
+          margin-top: 380px;
+          font-size: 30px;
+        }
+        @media(max-width: @tablet) {
+          margin-top: 270px;
+          font-size: 20px;
+        }
+        &::after {
+          content: '';
+          .color-id();
+          .orange();
+          top: auto;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+      .fact-desc {
+        color: @text;
+        line-height: 1.75;
+        font-size: 16px;
+        max-width: 500px;
+        @media(max-width: @tablet-max) {
+          padding-left: 30px;
+        }
+        @media(max-width: @tablet) {
+          font-size: 14px;
+          padding-right: 15px;
+        }
+      }
+    }
+
+    .left {
+      margin-left: 10%;
+      text-align: left;
+      @media(max-width: @desc) {
+        margin-left: 5%;
+      }
+    }
+
+
+  }
+}
