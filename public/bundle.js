@@ -10406,8 +10406,6 @@
 	                    $currentSlide.removeClass('active');
 	                }
 	            });
-	            console.log(slideLength);
-	            console.log(currentSlide);
 	        });
 
 	        $prev.click(() => {
