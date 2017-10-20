@@ -24,30 +24,109 @@
       }
     }
 
-
     .fact {
       position: relative;
       overflow: hidden;
-      height: 580px;
-      &.fact-1 {
-        background:  url("../../images/screen-3/fact-1.png") no-repeat right top;
-        background-size: 60% auto;
-        @media(max-width: @desc) {
-          background-size: auto 580px;
-          background: linear-gradient(to right, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 75%),
-                  url("../../images/screen-3/fact-1.png") no-repeat right top;
-        }
+      min-height: 580px;
+
+      .global-fact(@background) {
         @media(max-width: @tablet-max) {
           background:
-                  linear-gradient(to bottom, rgba(255,255,255,0) 46%,rgba(255,255,255,0) 47%,rgba(255,255,255,1) 83%),
-                  url("../../images/screen-3/fact-1.png") no-repeat top;
-          //background-size: 100% auto;
+                  linear-gradient(to bottom, rgba(255,255,255,0) 35%,rgba(255,255,255,1) 66%),
+                  @background no-repeat top;
+          background-size: contain;
+          margin-bottom: 20px;
         }
         @media(max-width: @tablet) {
           background:
                   linear-gradient(to bottom, rgba(255,255,255,0) 46%,rgba(255,255,255,0) 47%,rgba(255,255,255,1) 83%),
-                  url("../../images/screen-3/fact-1.png") no-repeat top;
+                  @background no-repeat top;
           background-size: auto 300px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .left-fact(@background) {
+        background: @background no-repeat right center;
+        background-size: 50% auto;
+        @media(max-width: @desc) {
+          background-size: auto 580px;
+          background: linear-gradient(to right, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 75%),
+          @background no-repeat right center;
+        }
+        .global-fact(@background);
+      }
+
+      .right-fact(@background) {
+        background: @background no-repeat left center;
+        background-size: 50% auto;
+        .global-fact(@background);
+      }
+
+      &.fact-1 {
+        .left-fact(url("../../images/screen-3/fact-1.png"));
+        .fact-head::after {
+          .color-id();
+          .orange();
+          content: '';
+          top: auto;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+      &.fact-2 {
+        .right-fact(url("../../images/screen-3/fact-2.png"));
+        .fact-head::after {
+          .color-id();
+          .red();
+          content: '';
+          top: auto;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+      &.fact-3 {
+        .left-fact(url("../../images/screen-3/fact-3.png"));
+        .fact-head::after {
+          .color-id();
+          .blue();
+          content: '';
+          top: auto;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+      &.fact-4 {
+        .right-fact(url("../../images/screen-3/fact-4.png"));
+        .fact-head::after {
+          .color-id();
+          .blue();
+          content: '';
+          top: auto;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+      &.fact-5 {
+        .left-fact(url("../../images/screen-3/fact-5.png"));
+        .fact-head::after {
+          .color-id();
+          .orange();
+          content: '';
+          top: auto;
+          left: 0;
+          bottom: -20px;
+        }
+      }
+      &.fact-6 {
+        .right-fact(url("../../images/screen-3/fact-6.png"));
+        .fact-head::after {
+          .color-id();
+          .red();
+          content: '';
+          top: auto;
+          left: 0;
+          bottom: -20px;
         }
       }
 
@@ -59,20 +138,12 @@
         margin-bottom: 40px;
         margin-top: 120px;
         @media(max-width: @tablet-max) {
-          margin-top: 380px;
           font-size: 30px;
+          margin-top: 370px;
         }
         @media(max-width: @tablet) {
-          margin-top: 270px;
           font-size: 20px;
-        }
-        &::after {
-          content: '';
-          .color-id();
-          .orange();
-          top: auto;
-          left: 0;
-          bottom: -20px;
+          margin-top: 300px;
         }
       }
       .fact-desc {
@@ -88,6 +159,14 @@
           padding-right: 15px;
         }
       }
+      .sub-text {
+        padding-top: 10px;
+        margin-top: 10px;
+        border-top: 1px solid @text;
+        font-size: 12px;
+        line-height: 1.583;
+        font-weight: 600;
+      }
     }
 
     .left {
@@ -97,7 +176,18 @@
         margin-left: 5%;
       }
     }
-
-
+    .right {
+      margin-left: 60%;
+      text-align: left;
+      padding-left: 15px;
+      @media(max-width: @desc-media) {
+        width: 400px;
+        padding-right: 0;
+      }
+      @media(max-width: @tablet-max) {
+        margin-left: 5%;
+        width: auto;
+      }
+    }
   }
 }
