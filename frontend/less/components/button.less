@@ -1,0 +1,47 @@
+@import "../core/palette.less";
+
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: color 0.2s, background 0.2s;
+  min-width: 250px;
+
+  &.white {
+    padding: 0 40px;
+    height: 66px;
+    color: @text;
+    background-color: @white;
+    font-size: 21px;
+    box-shadow: 0px 4px 11.96px 1.04px rgba(116, 120, 105, 0.44);
+    &:hover {
+      background-color: @opacityGrey;
+    }
+    &:active {
+      background-color: @grey;
+      color: @white;
+    }
+  }
+  &.orange {
+    padding: 0 30px;
+    height: 55px;
+    background-color: @orange;
+    color: @white;
+    font-size: 17px;
+    box-shadow: 0px 4px 11.96px 1.04px rgba(210, 210, 210, 0.53);
+    &:hover {
+      background-color: @lightOrange;
+    }
+    &:active {
+      background-color: @grey;
+      color: @white;
+    }
+  }
+  &.opacity {}
+  &.big {
+
+  }
+}

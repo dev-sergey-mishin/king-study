@@ -1,0 +1,92 @@
+@import "../core/palette.less";
+@import "../core/screens.less";
+
+.orange-form-container {
+  box-sizing: border-box;
+  text-align: center;
+  background: @orange;
+  padding: 55px 0;
+  color: @text;
+
+  .link {
+    cursor: pointer;
+    color: @blue;
+    text-decoration: underline;
+  }
+
+  .orange-form-head {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.222;
+    margin-bottom: 30px;
+    @media(max-width: @tablet-max) {
+      font-size: 28px;
+    }
+    @media(max-width: @tablet) {
+      font-size: 16px;
+    }
+  }
+
+  .orange-form {
+    margin-bottom: 38px;
+    .input {
+      margin: 0 14px;
+    }
+    @media(max-width: @tablet-max-media) {
+      .input {
+        margin-bottom: 15px;
+      }
+      .btn {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    @media(max-width: @tablet-max) {
+      .input {
+        display: block;
+        width: 80%;
+        margin: 0 auto 15px;
+      }
+    }
+  }
+
+  .desc {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 35px;
+    @media(max-width: @tablet-max) {
+      display: block;
+      margin: 0 auto 15px;
+      color: @white;
+      text-align: center;
+    }
+  }
+  .accept {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    @media(max-width: @tablet-max) {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .checkbox {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .accept-desc {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 320px;
+      @media(max-width: @tablet-max) {
+        width: 90%;
+      }
+    }
+  }
+}
