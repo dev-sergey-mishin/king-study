@@ -4,5 +4,21 @@
 .screen-container-4 {
   .screen-4 {
     text-align: center;
+
+    .head {
+      font-weight: bold;
+      color: @text;
+      font-size: 45px;
+      max-width: 850px;
+      margin: 50px auto;
+
+      @media (max-width: @tablet-max) {
+        font-size: 40px;
+      }
+      @media (max-width: @tablet) {
+        font-size: 30px;
+        margin: 20px auto;
+      }
+    }
   }
 }

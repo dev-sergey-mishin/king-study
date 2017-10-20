@@ -5,5 +5,6 @@ loader.loadContent().then(
     () => {
         require('./js/header.js');
         require('./js/screen-2.js');
+        require('./js/slider.js');
     }
 );

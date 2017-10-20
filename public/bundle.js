@@ -10312,13 +10312,14 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(8);
+	__webpack_require__(9);
 
 	let loader = __webpack_require__(6);
 	loader.loadContent().then(
 	    () => {
 	        __webpack_require__(5);
 	        __webpack_require__(7);
+	        __webpack_require__(8);
 	    }
 	);
 
@@ -10381,6 +10382,59 @@
 
 /***/ },
 /* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {$(document).ready(() => {
+	    let $container = $('.slider');
+
+	    $container.map((index) => {
+	        let $slider = $($container[index]);
+	        let $prev = $slider.find('.prev');
+	        let $next = $slider.find('.next');
+	        let $slide = $slider.find('.slide');
+	        let currentSlide = 0;
+	        const slideLength = +$slide.length - 1;
+	        $($slide[currentSlide]).addClass('active');
+
+	        $slider.change(() => {
+	            $slide = $slider.find('.slide');
+	            $slide.map((slideIndex) => {
+	                let $currentSlide = $($slide[slideIndex]);
+	                if (slideIndex === currentSlide) {
+	                    $currentSlide.addClass('active');
+	                } else {
+	                    $currentSlide.removeClass('active');
+	                }
+	            });
+	            console.log(slideLength);
+	            console.log(currentSlide);
+	        });
+
+	        $prev.click(() => {
+	            --currentSlide;
+	            if (currentSlide < 0) {
+	                currentSlide = 0;
+	            }
+	            $slider.change();
+	        });
+
+	        $next.click(() => {
+	            ++currentSlide;
+	            if (currentSlide > slideLength) {
+	                currentSlide = slideLength;
+	            }
+	            $slider.change();
+	        })
+	    });
+
+
+
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
