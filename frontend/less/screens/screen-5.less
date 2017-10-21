@@ -27,6 +27,22 @@
       @media(max-width: @desc-media) {
         padding: 60px 50px;
       }
+      @media(max-width: @tablet-max) {
+        display: none;
+      }
+      &.slider {
+        display: none;
+        padding: 15px;
+        @media(max-width: @tablet-max) {
+          display: block;
+        }
+        .col {
+          width: 50% !important; // простите потомки
+          .head, .btn {
+            margin-left: -80px;
+          }
+        }
+      }
 
       .col {
         position: relative;
@@ -36,6 +52,13 @@
         letter-spacing: normal;
         width: 20%;
         transition: outline 0.15s;
+        &.slide {
+          display: none;
+        }
+        &.active {
+          display: inline-block;
+        }
+
         &.orange:hover {
           outline: 3px solid @orange;
           z-index: 100;
