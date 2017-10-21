@@ -9,6 +9,9 @@ $(document).ready(() => {
             require('./js/screen-2.js');
             require('./js/slider.js');
 
+            $('main').css('display', 'block');
+            $('.loader-container').css('display', 'none');
+
             try {
                 setTimeout(() => {
                     WebFont.load({
