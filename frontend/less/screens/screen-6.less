@@ -9,6 +9,18 @@
   padding-bottom: 70px;
   overflow: hidden;
   text-align: center;
+  &::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: @black;
+    opacity: 0.4;
+    z-index: 0;
+  }
 
   .form {
     position: relative;
@@ -89,6 +101,7 @@
   }
 
   .text {
+    position: relative;
     display: inline-block;
     box-sizing: border-box;
     vertical-align: middle;
@@ -97,6 +110,7 @@
     width: 640px;
     max-width: 100%;
     margin-right: 100px;
+    z-index: 10;
 
     @media(max-width: @desc-max) {
       margin-right: 50px;
