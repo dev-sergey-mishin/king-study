@@ -10,9 +10,11 @@ $(document).ready(() => {
             require('./js/slider.js');
 
             try {
-                WebFont.load({
-                    google: { families: ['Open+Sans:400,600,800'] }
-                });
+                setTimeout(() => {
+                    WebFont.load({
+                        google: { families: ['Open+Sans:400,600,800'] }
+                    });
+                }, 100)
             } catch (err) {
                 console.log('WebFont not found');
             }
