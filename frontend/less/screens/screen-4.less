@@ -21,28 +21,12 @@
       height: 1105px;
     }
     @media (max-width: @tablet) {
-      height: 1026px;
+      height: 1012px;
     }
   }
 
   .screen-4 {
     text-align: center;
-
-    .head {
-      font-weight: bold;
-      color: @text;
-      font-size: 45px;
-      max-width: 850px;
-      margin: 50px auto;
-
-      @media (max-width: @tablet-max) {
-        font-size: 40px;
-      }
-      @media (max-width: @tablet) {
-        font-size: 28px;
-        margin: 20px auto;
-      }
-    }
 
     .slider {
       max-width: 1095px;
@@ -53,6 +37,7 @@
         }
       }
       @media (max-width: @tablet) {
+        margin: 0 -15px;
         .prev, .next {
           top: 269px;
         }
@@ -165,7 +150,6 @@
     }
 
     .info-block-container {
-      padding-bottom: 100px;
       .block {
         display: inline-block;
         vertical-align: top;

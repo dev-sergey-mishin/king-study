@@ -1,2 +1,116 @@
 @import "../core/palette.less";
 @import "../core/screens.less";
+
+.screen-container-5 {
+  text-align: center;
+  background: @whitty;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  .screen-head {
+    max-width: 100%;
+  }
+  @media(max-width: @tablet) {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .screen-5 {
+    .program-container {
+      position: relative;
+      box-sizing: border-box;
+      background: @white;
+      border: 1px solid @opacityGrey;
+      box-shadow: 0px 4px 20.16px 0.84px rgba(210, 210, 210, 0.53);
+      letter-spacing: -.36em;
+      padding: 80px 106px;
+      @media(max-width: @desc-media) {
+        padding: 60px 50px;
+      }
+
+      .col {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        letter-spacing: normal;
+        width: 20%;
+        transition: outline 0.1s;
+        &.orange:hover {
+          outline: 3px solid @orange;
+          z-index: 100;
+        }
+        &.red:hover {
+          outline: 3px solid @red;
+          z-index: 100;
+        }
+        &.blue:hover {
+          outline: 3px solid @blue;
+          z-index: 100;
+        }
+
+        .color-id {
+          width: 70px;
+          height: 5px;
+        }
+        .head {
+          box-sizing: border-box;
+          height: 86px;
+          line-height: 86px;
+          font-size: 25px;
+          padding-left: 32px;
+          text-align: left;
+          color: @black;
+          font-weight: 600;
+        }
+        .text-elem {
+          position: relative;
+          box-sizing: border-box;
+          height: 86px;
+          font-size: 16px;
+          padding-top: 30px;
+          padding-left: 32px;
+          text-align: left;
+          border-right: 1px solid @opacityGrey;
+          &.grey {
+            background-color: @whitty;
+          }
+          &.mini {
+            height: 56px;
+            padding-top: 16px;
+            padding-left: 0;
+            font-size: 14px;
+          }
+          &.big {
+            padding: 40px 15px;
+            text-align: center;
+            height: auto;
+            border: none;
+          }
+          .plus {
+            @size: 15px;
+            display: block;
+            width: @size;
+            height: @size;
+            border-radius: @size / 2;
+            color: @white;
+            background: @orange;
+            text-align: center;
+            font-size: 14px;
+            line-height: 13px;
+            margin: 5px auto 0;
+          }
+          .btn.orange {
+            height: 44px;
+            min-width: 0;
+            font-size: 16px;
+          }
+        }
+        .divider {
+          height: 1px;
+          width: 100%;
+          background-color: @opacityGrey;
+        }
+      }
+    }
+  }
+}
