@@ -2,6 +2,29 @@
 @import "../core/screens.less";
 
 .screen-container-4 {
+  position: relative;
+  .grey-block {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: @whitty;
+    pointer-events: none;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 895px;
+    @media (max-width: @tablet-max-media) {
+      height: 940px;
+      border-bottom: 1px solid @opacityGrey;
+    }
+    @media (max-width: @tablet-max) {
+      height: 1105px;
+    }
+    @media (max-width: @tablet) {
+      height: 1026px;
+    }
+  }
+
   .screen-4 {
     text-align: center;
 
