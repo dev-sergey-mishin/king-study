@@ -1,2 +1,70 @@
 @import "../core/palette.less";
 @import "../core/screens.less";
+
+.screen-container-9 {
+  .screen-9 {
+    text-align: center;
+    padding-top: 80px;
+    @media(max-width: @tablet) {
+      padding-top: 40px;
+    }
+  }
+
+  .info-block-container {
+    .block-row {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .block {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 30px;
+
+      .icon {
+        display: block;
+        width: 85px;
+        height: 85px;
+        margin-bottom: 20px;
+        color: @white;
+        font-size: 60px;
+        line-height: 85px;
+        text-align: center;
+        font-weight: bold;
+        &.icon-1 {
+          background: @orange;
+        }
+        &.icon-2 {
+          background: @red;
+        }
+        &.icon-3 {
+          background: @blue;
+        }
+      }
+      .info-head {
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        font-size: 35px;
+        margin-bottom: 30px;
+        max-width: 300px;
+        @media (max-width: @tablet) {
+          font-size: 18px;
+        }
+      }
+      .info-text {
+        font-size: 16px;
+        line-height: 1.75;
+        text-align: left;
+        max-width: 250px;
+        margin-bottom: 75px;
+        @media (max-width: @tablet-max-media) {
+          margin-bottom: 30px;
+        }
+        @media (max-width: @tablet) {
+          font-size: 14px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
