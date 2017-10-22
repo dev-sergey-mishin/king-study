@@ -9,6 +9,7 @@ $(document).ready(() => {
             require('./js/screen-2.js');
             require('./js/slider.js');
             require('./js/modals.js');
+            require('./js/form.js');
 
             $('main').css('display', 'block');
             $('.loader-container').css('display', 'none');

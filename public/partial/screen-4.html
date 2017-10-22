@@ -1,17 +1,17 @@
-<div class="orange-form-container">
+<div class="orange-form-container" data-form="form">
     <div class="orange-form-head">Оставьте заявку прямо сейчас, и узнайте подробнее,<br/>как воплотить мечну в реальность</div>
     <div class="orange-form">
-        <input class="input" type="text" placeholder="Введите имя" />
-        <input class="input" type="text" placeholder="Введите телефон" />
-        <input class="input" type="text" placeholder="Введите e-mail" />
-        <button class="btn white" onclick="openModalDone()">Узнать подробнее</button>
+        <input class="input" placeholder="Введите имя" data-form="name" />
+        <input class="input" placeholder="Введите телефон" data-form="phone" />
+        <input class="input" placeholder="Введите e-mail" data-form="email" />
+        <button class="btn white" data-form="submit">Узнать подробнее</button>
     </div>
     <div class="desc">
         *В течение 15 минут с вами свяжется наш дружелюбный менеджер<br />
         *Заявка вас ни к чему не обязывает - мы просто ответим на ваши вопросы
     </div>
     <div class="accept">
-        <input id="screen-4-accept" type="checkbox" class="checkbox" checked />
+        <input data-form="accept" id="screen-4-accept" type="checkbox" class="checkbox" checked />
         <label for="screen-4-accept"></label>
         <div class="accept-desc">
             Я&nbsp;даю&nbsp;согласие&nbsp;на&nbsp;обработку персональных&nbsp;данных

@@ -7,17 +7,17 @@
             Media Camp в партнерстве с Высшей Школой Экономики в Москве
         </div>
     </div>
-    <div class="form">
+    <div class="form" data-form="form">
         <div class="head">
             Оставь заявку и узнай подробнее про Media Camp прямо сейчас
         </div>
-        <input class="input" type="text" placeholder="Введите имя" />
-        <input class="input" type="text" placeholder="Введите телефон" />
-        <input class="input" type="text" placeholder="Введите e-mail" />
-        <button class="btn orange" onclick="openModalDone()">Узнать подробнее</button>
+        <input class="input" placeholder="Введите имя" data-form="name" />
+        <input class="input" placeholder="Введите телефон" data-form="phone" />
+        <input class="input" placeholder="Введите e-mail" data-form="email" />
+        <button class="btn orange" data-form="submit">Узнать подробнее</button>
 
         <div class="accept">
-            <input id="screen-6-accept" type="checkbox" class="checkbox" checked />
+            <input data-form="accept" id="screen-6-accept" type="checkbox" class="checkbox" checked />
             <label for="screen-6-accept"></label>
             <div class="accept-desc">
                 Я&nbsp;даю&nbsp;согласие&nbsp;на&nbsp;обработку персональных&nbsp;данных

@@ -10,6 +10,11 @@
   transition: color 0.2s, background 0.2s, border-color 0.2s;
   min-width: 250px;
 
+  &[disabled] {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
   &.white {
     padding: 0 40px;
     height: 66px;

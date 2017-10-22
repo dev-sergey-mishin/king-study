@@ -2,16 +2,16 @@
     <div class="modal-layer"></div>
     <div class="modal-container" style="height: 600px;">
         <div class="close-modal close"></div>
-        <div class="modal-form">
+        <div class="modal-form" data-form="form">
             <div class="title">Оставте заявку прямо сейчас, и узнайте как воплотить мечту в реальность</div>
             <div class="desc">В течении 15 минут с вами свяжется наш дружелюбный менеджер</div>
-            <input class="input" placeholder="Введите имя" />
-            <input class="input" placeholder="Введите телефон" />
-            <input class="input" placeholder="Введите e-mail" />
-            <button class="btn orange" onclick="openModalDone()">Узнать подробнее</button>
+            <input class="input" placeholder="Введите имя" data-form="name" />
+            <input class="input" placeholder="Введите телефон" data-form="phone" />
+            <input class="input" placeholder="Введите e-mail" data-form="email" />
+            <button class="btn orange" data-form="submit">Узнать подробнее</button>
 
             <div class="accept">
-                <input id="modal-accept" type="checkbox" class="checkbox" checked />
+                <input data-form="accept" id="modal-accept" type="checkbox" class="checkbox" checked />
                 <label for="modal-accept"></label>
                 <div class="accept-desc">
                     Я&nbsp;даю&nbsp;согласие&nbsp;на&nbsp;обработку персональных&nbsp;данных
