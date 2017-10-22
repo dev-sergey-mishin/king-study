@@ -1,0 +1,125 @@
+@import '../../less/core/palette.less';
+@import '../../less/core/screens.less';
+
+.modal-window {
+  @zIndex: 1000;
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: @zIndex + 1;
+  &.hide {
+    display: none;
+  }
+  .modal-layer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: @zIndex;
+    background-color: black;
+    opacity: 0.5;
+  }
+  .modal-container {
+    position: fixed;
+    display: inline-block;
+    box-sizing: border-box;
+    z-index: @zIndex + 1;
+    border-radius: 4px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 17px;
+    line-height: 21px;
+    border: 1px solid @opacityGrey;
+    background-color: @white;
+    text-align: center;
+
+    width: 560px;
+    max-width: calc(~'100% - 30px');
+    max-height: calc(~'100% - 30px');
+
+    padding: 50px 60px;
+
+    @media(max-width: @tablet) {
+      padding: 30px 15px;
+    }
+
+
+    .close-modal {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: url("../../images/modal/close.svg") no-repeat center;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 21px;
+      line-height: 1.2;
+      font-weight: 600;
+      margin-bottom: 40px;
+      @media(max-width: @tablet) {
+        max-width: 350px;
+        font-size: 16px;
+        margin: 0 auto 20px;
+      }
+    }
+
+    .desc {
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      @media(max-width: @tablet) {
+        font-size: 12px;
+      }
+    }
+
+    .input {
+      background: @whitty;
+      margin-bottom: 10px;
+      width: 350px;
+      max-width: 100%;
+      @media(max-width: @tablet) {
+        height: 42px;
+      }
+    }
+
+    .btn {
+      max-width: 100%;
+      min-width: 0;
+      margin: 20px auto;
+      @media(max-width: @tablet) {
+        height: 42px;
+        margin: 10px auto;
+      }
+    }
+
+    .accept {
+      font-size: 12px;
+      @media(max-width: @tablet) {
+        font-size: 10px;
+      }
+      .checkbox {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .accept-desc {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(~'100% - 30px');
+        text-align: left;
+      }
+    }
+
+  }
+}

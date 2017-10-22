@@ -9,11 +9,13 @@ $(document).ready(() => {
             require('./js/screen-2.js');
             require('./js/slider.js');
 
+
             $('main').css('display', 'block');
             $('.loader-container').css('display', 'none');
 
             try {
                 setTimeout(() => {
+                    require('./js/modals.js');
                     WebFont.load({
                         google: { families: ['Open+Sans:400,600,800'] }
                     });

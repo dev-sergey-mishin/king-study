@@ -12,6 +12,8 @@ module.exports.loadContent = () => {
         $('.screen-container-8').load('partial/screen-8.html');
         $('.screen-container-9').load('partial/screen-9.html');
 
+        $('.modals').load('partial/modals.html');
+
         $('.footer-container').load('partial/footer.html', () => {
             resolve();
         });
