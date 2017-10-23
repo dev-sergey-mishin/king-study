@@ -21,3 +21,8 @@ window.openModalDone = () => {
     $('#modal-form').addClass('hide');
     $('#modal-done').removeClass('hide');
 };
+window.openPolicy = () => {
+    $('#modal-form').addClass('hide');
+    $('#modal-done').addClass('hide');
+    $('#modal-policy').removeClass('hide');
+};
