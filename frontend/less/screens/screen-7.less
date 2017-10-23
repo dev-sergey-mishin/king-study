@@ -18,7 +18,7 @@
       width: 470px;
       max-width: 100%;
       height: 380px;
-      margin: 0 15px;
+      margin: 15px;
       background-color: @grey;
       @media(max-width: @tablet) {
         width: 100%;
@@ -32,6 +32,10 @@
     padding-top: 80px;
     padding-bottom: 60px;
     text-align: center;
+    .prev, .next {
+      top: 250px;
+    }
+
     @media(max-width: @tablet) {
       padding-top: 50px;
       padding-bottom: 30px;
@@ -56,14 +60,12 @@
         width: 435px;
         z-index: 10;
         box-shadow: 0px 4px 20.16px 0.84px rgba(210, 210, 210, 0.53);
+
         @media(max-width: @tablet) {
           margin: 0;
           width: 100%;
           max-width: 100%;
-          height: auto;
-          img {
-            width: 100%;
-          }
+          height: 300px;
         }
       }
 
@@ -75,12 +77,10 @@
         text-align: left;
         max-width: 590px;
         letter-spacing: normal;
-        border: 1px solid @opacityGrey;
+
         min-height: 435px;
 
-        padding-top: 60px;
-        padding-left: 70px;
-        padding-right: 40px;
+        padding: 40px 40px 40px 50px;
         border-left: none;
 
         @media(max-width: @tablet-max-media) {
@@ -104,16 +104,16 @@
         }
 
         .head {
-          font-size: 24px;
+          font-size: 20px;
           line-height: 1.2;
           font-weight: 600;
-          margin-bottom: 40px;
+          margin-bottom: 30px;
         }
         .feedback {
-          font-size: 16px;
+          font-size: 13px;
           line-height: 1.75;
           margin-bottom: 40px;
-          margin-left: 30px;
+          margin-left: 20px;
         }
         .name {
           font-size: 14px;

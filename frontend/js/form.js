@@ -1,6 +1,10 @@
 $(document).ready(() => {
     let $allForms = $('[data-form="form"]');
 
+    let Inputmask = require('inputmask');
+    let im = new Inputmask("+7 (999) 999-99-99");
+    im.mask('[data-form="phone"]');
+
     $allForms.map((index) => {
         let $form = $($allForms[index]);
         let $name = $form.find('[data-form="name"]');
@@ -19,7 +23,7 @@ $(document).ready(() => {
 
 
         $submit.click((e) => {
-            let phoneValid = isPhoneValid($phone.val());
+            let phoneValid = isPhoneValid($phone.val().replace(/\D/g, ''));
             let emailValid = isMailValid($email.val());
 
             if (phoneValid && emailValid) {

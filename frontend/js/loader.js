@@ -2,6 +2,7 @@ module.exports.loadContent = () => {
     let header = new Promise((resolve, ) => { $('.header-container').load('partial/header.html', () => resolve()); });
     let footer = new Promise((resolve, ) => { $('.footer-container').load('partial/footer.html', () => resolve()); });
     let modals = new Promise((resolve, ) => { $('.modals').load('partial/modals.html', () => resolve()); });
+    let scripts = new Promise((resolve, ) => { $('.scripts-container').load('partial/scripts.html', () => resolve()); });
 
     let screen1 = new Promise((resolve, ) => { $('.screen-container-1').load('partial/screen-1.html', () => resolve()); });
     let screen2 = new Promise((resolve, ) => { $('.screen-container-2').load('partial/screen-2.html', () => resolve()); });
