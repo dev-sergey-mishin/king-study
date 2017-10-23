@@ -31,6 +31,9 @@
     .slider {
       max-width: 1095px;
       margin: 0 auto;
+      .prev, .next {
+        top: 258px;
+      }
       @media (max-width: @tablet-max-media) {
         .prev, .next {
           top: 230px;
@@ -93,7 +96,7 @@
         z-index: 4;
 
         width: 640px;
-        height: 455px;
+        min-height: 455px;
         margin-top: 60px;
         padding: 50px 40px 50px 110px;
 
