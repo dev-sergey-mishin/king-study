@@ -84,7 +84,6 @@ if (NODE_ENV === 'production') {
                 loops : true,
                 unused : true,
                 warnings : false,
-                drop_console : true,
                 unsafe : true
             }
         })

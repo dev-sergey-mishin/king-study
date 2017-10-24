@@ -1,7 +1,8 @@
 $(document).ready(() => {
-    let $allForms = $('[data-form="form"]');
-
+    let SendMessage = require('./submit.js');
     let Inputmask = require('inputmask');
+
+    let $allForms = $('[data-form="form"]');
     let im = new Inputmask("+7 (999) 999-99-99");
     im.mask('[data-form="phone"]');
 
@@ -13,14 +14,10 @@ $(document).ready(() => {
         let $submit = $form.find('[data-form="submit"]');
         let $accept = $form.find('[data-form="accept"]');
 
-        $accept.change((event) => {
+        $accept.change(() => {
             let checked = $accept[0].checked;
             $submit.attr('disabled', !checked);
-            if (!checked) {
-
-            }
         });
-
 
         $submit.click((e) => {
             let phoneValid = isPhoneValid($phone.val().replace(/\D/g, ''));
@@ -28,6 +25,7 @@ $(document).ready(() => {
 
             if (phoneValid && emailValid) {
                 openModalDone();
+                SendMessage.submit($name.val(), $phone.val(), $email.val());
             }
 
             if (!phoneValid) {
