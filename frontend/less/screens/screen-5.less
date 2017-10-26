@@ -35,6 +35,10 @@
         padding: 15px;
         @media(max-width: @tablet-max) {
           display: block;
+          .next, .prev {
+            top: 35px;
+            z-index: 101;
+          }
         }
         .col {
           width: 50% !important; // простите потомки
@@ -51,7 +55,6 @@
         box-sizing: border-box;
         letter-spacing: normal;
         width: 20%;
-        //transition: outline 0.15s;
         &.slide {
           display: none;
         }
@@ -71,6 +74,11 @@
           outline: 3px solid @blue;
           z-index: 100;
         }
+        @media(max-width: @tablet-max) {
+          &:hover {
+            outline: none !important;
+          }
+        }
 
         .color-id {
           width: 70px;
@@ -85,6 +93,7 @@
           text-align: left;
           color: @black;
           font-weight: 600;
+          pointer-events: none;
         }
         .text-elem {
           position: relative;
@@ -95,6 +104,12 @@
           padding-left: 32px;
           text-align: left;
           border-right: 1px solid @opacityGrey;
+          &.no-padding {
+            padding-top: 15px;
+            @media(max-width: @tablet-min) {
+              font-size: 14px;
+            }
+          }
           &.grey {
             background-color: @whitty;
           }

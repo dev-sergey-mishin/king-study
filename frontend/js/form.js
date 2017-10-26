@@ -1,6 +1,7 @@
 $(document).ready(() => {
     let SendMessage = require('./submit.js');
     let Inputmask = require('inputmask');
+    let scrollToElement = require('scroll-to-element');
 
     let $allForms = $('[data-form="form"]');
     let im = new Inputmask("+7 (999) 999-99-99");
@@ -26,36 +27,49 @@ $(document).ready(() => {
             if (phoneValid && emailValid) {
                 openModalDone();
                 SendMessage.submit($name.val(), $phone.val(), $email.val());
+                try {
+                    yaCounter46410024.reachGoal('uznat podrobnee');
+                } catch (err) {
+                    console.error('yandex counter not found');
+                }
             }
 
-            if (!phoneValid) {
-                $phone.addClass('error');
-                $phone.removeClass("bounce");
-                $phone.offsetWidth = $phone.offsetWidth;
-                $phone.addClass("bounce");
+            $('.error').removeClass('error');
+            let phoneError = showError($phone, phoneValid);
+            let mailError = showError($email, emailValid);
+            Promise.all([phoneError, mailError]).then(() => {
+                if (!$submit.data('scroll')) {
+                    let $error = $('.error');
+                    if ($error.length) {
+                        scrollToElement('.error', {
+                            offset: -100
+                        });
+                    }
+                }
+            })
 
-                setTimeout(() => {
-                    $phone.removeClass("bounce");
-                }, 1000);
-            } else {
-                $phone.removeClass('error');
-            }
-            if (!emailValid) {
-                $email.addClass('error');
-                $email.removeClass("bounce");
-                $email.offsetWidth = $email.offsetWidth;
-                $email.addClass("bounce");
-
-                setTimeout(() => {
-                    $email.removeClass("bounce");
-                }, 1000);
-            } else {
-                $email.removeClass('error');
-            }
 
         });
     });
 });
+
+const showError = ($elem, isValid) => {
+    return new Promise((resolve) => {
+        if (!isValid) {
+            $elem.addClass('error');
+            $elem.removeClass("bounce");
+            $elem.offsetWidth = $elem.offsetWidth;
+            $elem.addClass("bounce");
+            setTimeout(() => {
+                $elem.removeClass("bounce");
+            }, 1000);
+        } else {
+            $elem.removeClass('error');
+        }
+
+        resolve();
+    });
+};
 
 const isPhoneValid = (phone) => {
     if (phone == null) return true;
