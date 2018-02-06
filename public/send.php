@@ -3,7 +3,7 @@ if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phone'])&&$_POST[
         
 }
 
-	$to = 'sergey.mishin.71@gmail.com, clients.kingstudy@gmail.com, getmoreleads@yandex.ru'; //Почта получателя, через запятую можно указать сколько угодно адресов
+	$to = 'clients.kingstudy@gmail.com, getmoreleads@yandex.ru'; //Почта получателя, через запятую можно указать сколько угодно адресов
 	$subject = 'Обратный звонок'; //Загаловок сообщения
 	$message = '
 			<html>
