@@ -1,8 +1,4 @@
 <?
-if((isset($_POST['name'])&&$_POST['name']!="")&&(isset($_POST['phone'])&&$_POST['phone']!="")){ //Проверка отправилось ли наше поля name и не пустые ли они
-        
-}
-
 	$to = 'clients.kingstudy@gmail.com, getmoreleads@yandex.ru'; //Почта получателя, через запятую можно указать сколько угодно адресов
 	$subject = 'Обратный звонок'; //Загаловок сообщения
 	$message = '
