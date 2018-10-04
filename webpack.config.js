@@ -1,91 +1,69 @@
-const webpack = require('webpack');
 const path = require('path');
-const NODE_ENV = process.env.NODE_ENV || 'dev';
+const webpack = require('webpack');
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
-module.exports = {
-    entry: [
-        './frontend/entry.js'
-    ],
-    output: {
-        filename: 'bundle.js',
-        path: __dirname + '/public'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.less$/,
-                include: includeLocations(),
-                use: [
-                    { loader: "style-loader" },
-                    { loader: "css-loader"   },
-                    { loader: "less-loader"  }
-                ]
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                include: includeLocations(),
-                use: [{
-                    loader: "url-loader"
-                }]
-            },
-            {
-                test: [/\.jsx?$/, /\.js$/],
-                include: includeLocations(),
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        plugins: [
-                            'transform-runtime'
-                        ]
-                    }
-                }]
-            }
-        ]
-    },
-    watch: NODE_ENV === 'dev',
+const locations = [
+    path.resolve(__dirname, 'frontend'),
+];
+
+const common = {
+    mode: NODE_ENV,
+    watch: NODE_ENV === 'development',
+
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.DefinePlugin({ NODE_ENV: JSON.stringify(NODE_ENV) }),
+        new webpack.DefinePlugin({
+            dirName: '__dirname',
+
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery'
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            children: true,
-            async: true
-        })
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.NoEmitOnErrorsPlugin()
     ],
-
+    optimization: {
+        minimize: NODE_ENV === 'production'
+    },
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.jsx']
     },
-
     resolveLoader: {
         modules: ['node_modules'],
         extensions: ['.js', '.jsx']
     }
 };
 
-function includeLocations() {
-    return [
-        path.resolve(__dirname, "frontend")
-    ]
-}
+const frontend = {
+    entry: ['babel-polyfill', './frontend/entry.js'],
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: 'bundle.js',
+        chunkFilename: 'chunk.[name].js',
+    },
+    module: {
+        rules: [
+            {
+                test: [/\.jsx?$/, /\.js$/],
+                include: locations,
+                use: { loader: 'babel-loader' }
+            }, {
+                test: /\.(png|jpg|gif|svg|otf|mp4|webp)$/,
+                include: locations,
+                use: { loader: 'url-loader' }
+            }, {
+                test: /\.less$/,
+                include: locations,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader'   },
+                    { loader: 'less-loader'  }
+                ]
+            },
+        ],
+    },
+};
 
-if (NODE_ENV === 'production') {
-    module.exports.plugins.push(
-        new webpack.optimize.UglifyJsPlugin({
-            beautify: false,
-            comments: false,
-            compress: {
-                sequences : true,
-                booleans : true,
-                loops : true,
-                unused : true,
-                warnings : false,
-                unsafe : true
-            }
-        })
-    );
-}
+module.exports = [
+    Object.assign({} , common, frontend)
+];
