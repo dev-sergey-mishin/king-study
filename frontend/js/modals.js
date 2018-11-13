@@ -14,20 +14,37 @@ $(document).ready(() => {
     });
 });
 
+window.isShow = false;
+const hideAllModels = () => {
+    window.isShow = true;
+    let allModals = document.querySelectorAll('.modal-window');
+    if (allModals) {
+        Array.from(allModals).map((modal) => {
+            modal.classList.add('hide')
+        })
+    }
+};
+
 window.openModalForm = () => {
-    $('#modal-form').removeClass('hide');
+    hideAllModels();
+    document.getElementById('modal-form').classList.remove('hide');
 };
 window.openModalDone = () => {
-    $('#modal-form').addClass('hide');
-    $('#modal-done').removeClass('hide');
+    hideAllModels();
+    document.getElementById('modal-done').classList.remove('hide');
 };
 window.openPolicy = () => {
-    $('#modal-form').addClass('hide');
-    $('#modal-done').addClass('hide');
-    $('#modal-policy').removeClass('hide');
+    hideAllModels();
+    document.getElementById('modal-policy').classList.remove('hide');
 };
 window.openVideoModal = () => {
+    hideAllModels();
     document.getElementById('modal-video').classList.remove('hide');
 };
 
-setTimeout(() => window.openVideoModal(), 30000);
+setTimeout(() => {
+    if (window.outerWidth > 768 && !window.isShow) {
+        window.openVideoModal();
+    }
+}, 30000);
+

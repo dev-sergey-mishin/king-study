@@ -62,10 +62,44 @@
 
 <div id="modal-video" class="modal-window hide">
     <div class="modal-layer"></div>
-    <div class="modal-container" style="width: 1024px; background: black; padding: 0;">
+    <div class="modal-container">
         <div class="close-modal close"></div>
-        <div class="modal-form" style="overflow: hidden; max-height: 100%; height: 100%;">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/i74NQqjxVFM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="modal-form">
+            <div class="content-container">
+                <div class="frame-container">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/i74NQqjxVFM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="text-container">
+                    <div class="title">
+                        Привет, Друзья!
+                    </div>
+                    <div class="desc">
+                        Посмотрите короткое видео о нас, чтобы познакомиться поближе и узнать, чем мы отличаемся на рынке образования!
+                    </div>
+                </div>
+            </div>
+            <div class="orange-form-container" data-form="form">
+                <div class="orange-form-head">Оставьте заявку прямо сейчас, и узнайте подробнее,<br/>как воплотить мечту в реальность</div>
+                <div class="orange-form">
+                    <input class="input" placeholder="Введите имя" data-form="name" />
+                    <input class="input" placeholder="Введите телефон" data-form="phone" />
+                    <input class="input" placeholder="Введите e-mail" data-form="email" />
+                    <button class="btn blue" data-form="submit">Узнать подробнее</button>
+                </div>
+                <div class="desc">
+                    *В течение 15 минут с вами свяжется наш дружелюбный менеджер<br />
+                    *Заявка вас ни к чему не обязывает - мы просто ответим на ваши вопросы
+                </div>
+                <div class="accept">
+                    <input data-form="accept" id="video-modal-accept" type="checkbox" class="checkbox" checked />
+                    <label for="video-modal-accept"></label>
+                    <div class="accept-desc">
+                        Я&nbsp;даю&nbsp;согласие&nbsp;на&nbsp;обработку персональных&nbsp;данных
+                        и&nbsp;соглашаюсь c <a class="link" onclick="openPolicy()">политикой конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
