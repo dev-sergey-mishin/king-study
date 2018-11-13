@@ -18,86 +18,14 @@
     top: 0;
     bottom: 0;
     background: @black;
-    opacity: 0.4;
+    opacity: 0.6;
     z-index: 0;
   }
 
-  .form {
+  .you-tube-container {
     position: relative;
-    display: inline-block;
     vertical-align: middle;
-    box-sizing: border-box;
-    max-width: 100%;
-    width: 530px;
-    padding: 70px;
-    text-align: center;
-    @media(max-width: @desc-max) {
-      width: 480px;
-      padding: 45px;
-    }
-    @media(max-width: @tablet) {
-      width: 450px;
-      padding: 30px;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: @black;
-      opacity: 0.3;
-      pointer-events: none;
-    }
-
-    >* {
-      position: relative;
-      z-index: 10;
-    }
-
-    .head {
-      font-size: 28px;
-      line-height: 1.2;
-      text-align: center;
-      margin: 0 -30px;
-      margin-bottom: 30px;
-      color: @white;
-      @media(max-width: @tablet) {
-        margin: 0 -15px;
-        margin-bottom: 20px;
-        font-size: 14px;
-      }
-    }
-
-    .input {
-      display: block;
-      max-width: 100%;
-      width: 380px;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      margin: 30px auto;
-      max-width: 100%;
-      min-width: 0;
-      width: auto;
-    }
-
-    .accept {
-      color: @white;
-      .input, .accept-desc {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .accept-desc {
-        width: calc(~'100% - 30px');
-      }
-      @media(max-width: @tablet) {
-        font-size: 12px;
-        text-align: left;
-      }
-    }
+    z-index: 1;
   }
 
   .text {

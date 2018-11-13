@@ -26,3 +26,8 @@ window.openPolicy = () => {
     $('#modal-done').addClass('hide');
     $('#modal-policy').removeClass('hide');
 };
+window.openVideoModal = () => {
+    document.getElementById('modal-video').classList.remove('hide');
+};
+
+setTimeout(() => window.openVideoModal(), 30000);
